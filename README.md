@@ -1,2 +1,7 @@
-# TensorFlow2.0-
-《TensorFlow2.0：实战深度学习》配书代码和资源
+# 《TensorFlow从零开始学》
+
+参考资料尚在整理中，近期会更新
+
+## 配套实验数据
+网盘链接:https://pan.baidu.com/s/1toBd94g6WN4GQhk6BtV1Tg
+提取密码:u394
