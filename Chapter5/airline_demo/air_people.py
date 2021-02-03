@@ -93,7 +93,7 @@ def show_data(predict_train_data, predict_test_data, look_back):
     predict_test_data_plot = numpy.empty_like(dataset)
     predict_test_data_plot[:, :] = numpy.nan
     predict_test_data_plot[len(predict_train_data)
-                           + look_back:len(dataset)-1, :] = predict_test_data
+                           + look_back:len(dataset)-look_back, :] = predict_test_data
 
     # 绘制数据
     plt.plot(scaler.inverse_transform(dataset), color='blue', label='Raw data')
