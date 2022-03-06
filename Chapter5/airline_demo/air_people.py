@@ -41,11 +41,11 @@ def get_data(look_back):
     train_data_x, train_data_y = create_dataset(train_data, look_back)
     test_data_x, test_data_y = create_dataset(test_data, look_back)
 
-    # 对数据进行Reshape操作，以便输入到RNN模型中
+    # 对数据进行Reshape操作，以便输入到RNN模型中,RNN模型的input=[samples,look_back,features],这里features为1.
     train_data_x = numpy.reshape(train_data_x, (train_data_x.shape[0],
-                                                1, train_data_x.shape[1]))
+                                                look_back, 1))
     test_data_x = numpy.reshape(test_data_x, (test_data_x.shape[0],
-                                              1, test_data_x.shape[1]))
+                                              look_back, 1))
 
     return train_data_x, train_data_y, test_data_x, test_data_y
 
@@ -93,7 +93,7 @@ def show_data(predict_train_data, predict_test_data, look_back):
     predict_test_data_plot = numpy.empty_like(dataset)
     predict_test_data_plot[:, :] = numpy.nan
     predict_test_data_plot[len(predict_train_data)
-                           + look_back:len(dataset)-1, :] = predict_test_data
+                           + 2look_back:len(dataset), :] = predict_test_data
 
     # 绘制数据
     plt.plot(scaler.inverse_transform(dataset), color='blue', label='Raw data')
