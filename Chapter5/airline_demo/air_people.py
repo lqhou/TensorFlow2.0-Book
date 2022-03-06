@@ -65,7 +65,7 @@ def create_dataset(dataset, look_back):
 def get_model(train_data_x, train_data_y, look_back):
     # 构建一个简单的RNN模型
     rnn_model = tf.keras.Sequential()
-    rnn_model.add(tf.keras.layers.SimpleRNN(4, input_shape=(1, look_back)))
+    rnn_model.add(tf.keras.layers.SimpleRNN(4, input_shape=(look_back，1)))
     rnn_model.add(tf.keras.layers.Dense(1))
 
     # 编译、训练模型
